@@ -1,0 +1,16 @@
+<div class="span9 offset3">
+	<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path%></li>
+	  <li><%= link_to "Departments", departments_path %></li>
+	  <li class="active"><%= format4display(@department)%></li>
+	</ol>
+
+	<h1><%=format4display(@department)%></h1>
+	
+	<ul>
+		<% @teachers.each do |teacher| %>
+	  	<li><%= link_to teacher.name, teacher_path(id: @teacher.id)%></li>
+		<% end %>
+	</ul>
+	
+</div>
