@@ -1,0 +1,10 @@
+<div class="span6 offset3">
+	<h1>Update Course</h1>
+
+	<%= form_for(@course) do |f| %>
+		<%= render 'fields', f: f%>
+	  
+	  	<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	<% end %>
+
+</div>

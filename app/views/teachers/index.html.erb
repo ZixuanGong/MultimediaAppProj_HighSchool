@@ -1,4 +1,4 @@
-<%= render 'teachers/group_links'%>
+<%= render 'group_links'%>
 
 <div class="span9">
 	<h1>All Teachers</h1>
@@ -6,13 +6,19 @@
 	  <tr>
 	    <th>Name</th>
 	    <th>Department</th>
+	    <th></th>
 	  </tr>
 	 
 	  <% @teachers.each do |teacher| %>
 		  <tr>
-		    <td><%= link_to teacher.name, teacher_path(teacher.id) %></td>
+		    <td><%= link_to teacher.name, teacher_path(teacher) %></td>
 		    <td><%= teacher.department %></td>
+		    <td><%= link_to "Edit", edit_teacher_path(teacher) %></td>
 		  </tr>
 	  <% end %>
 	</table>
+
+	<br>
+
+	<%= link_to "New Teacher", new_teacher_path%>
 </div>

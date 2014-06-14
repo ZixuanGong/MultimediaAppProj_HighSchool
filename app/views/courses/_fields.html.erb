@@ -1,0 +1,14 @@
+<%= f.label "Course Name" %>
+<%= f.text_field :name %>
+
+<%= f.label :program %>
+<%= f.text_area :program %>
+
+<%= f.label :department%>
+<%= f.select :department, Course::DEPARTMENTS, prompt: true%>
+
+<%= f.label :grade%>
+<%= f.select :grade, Course::GRADES, prompt: true%>
+
+<%= f.label "Teacher"%>
+<%= f.collection_select(:teacher_id, Teacher.all, :id, :name, prompt: true)%>

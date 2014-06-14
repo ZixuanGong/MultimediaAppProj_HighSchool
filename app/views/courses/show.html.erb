@@ -1,0 +1,14 @@
+<div class="span9">
+	<p>Course Name: <%= @course.name%></p>
+
+	<p>Program: <%= @course.program%></p>
+
+	<p>Department: <%= @course.department%></p>
+
+	<p>Grade: Senior <%= @course.grade%></p>
+
+	<p>Teacher: <%= link_to Teacher.find(@course.teacher_id).name, teacher_path(@course.teacher_id)%></p>
+
+	<%= link_to 'All Courses', courses_path%> 
+	<%= link_to 'Edit', edit_course_path%> 
+</div>

@@ -1,0 +1,9 @@
+<div class="span6 offset3">
+	<h1>New Teacher</h1>
+
+	<%= form_for(@teacher) do |f| %>
+	   	<%= render 'fields', f: f%>
+
+		<%= f.submit "Create Teacher", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>

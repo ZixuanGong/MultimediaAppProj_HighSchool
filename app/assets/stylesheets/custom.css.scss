@@ -31,8 +31,15 @@ body {
 }
 
 /* form */
-input {
-  width: 100%
+input, textarea{
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+select{
+  display: block;
+  margin-bottom: 15px;
 }
 
 /* breadcrumbs*/
