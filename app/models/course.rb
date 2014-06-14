@@ -1,5 +1,7 @@
 class Course < ActiveRecord::Base
   belongs_to :teacher
+  has_many :lessons
+  has_many :clas, through: :lessons
 
   validates :name, presence: true
   validates :grade, presence: true

@@ -12,6 +12,10 @@ body {
   }
 }
 
+.sidebar {
+  margin-top: 80px;
+}
+
 /* header */
 #logo {
   float: left;
@@ -30,6 +34,25 @@ body {
   }
 }
 
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
 /* form */
 input, textarea{
   width: 100%;
@@ -41,6 +64,7 @@ select{
   display: block;
   margin-bottom: 15px;
 }
+
 
 /* breadcrumbs*/
 .breadcrumb > li + li:before {

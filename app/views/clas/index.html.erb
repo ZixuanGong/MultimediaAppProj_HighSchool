@@ -1,0 +1,7 @@
+<div class="span6 offset3">
+	<h1>All Classes</h1>
+	<% @clas.each do |c| %>
+		<p><%= link_to full_class_name(c), cla_path(c)%></p>
+	<% end %>
+
+</div>

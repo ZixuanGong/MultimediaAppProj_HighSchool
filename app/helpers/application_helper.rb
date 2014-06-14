@@ -8,6 +8,10 @@ module ApplicationHelper
 	    end
 	end
 
+	def full_class_name(c)
+		"Senior #{c.grade}-#{c.name}"
+	end
+
 	def get_path(url)
 		url.split('/')[-1]
 	end
