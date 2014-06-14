@@ -20,4 +20,6 @@ class TeachersController < ApplicationController
 		end
 	end
 
+	
+
 end

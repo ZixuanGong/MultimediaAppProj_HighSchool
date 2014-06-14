@@ -8,4 +8,7 @@ module TeachersHelper
 		temp.titleize
 	end
 
+	def current_topic
+		
+	end
 end

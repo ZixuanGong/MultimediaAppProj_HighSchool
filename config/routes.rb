@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   resources :teachers
+  resources :courses
+  
   root 'pages#home'
 
   get '/departments', to: 'teachers#departments', via: 'get'

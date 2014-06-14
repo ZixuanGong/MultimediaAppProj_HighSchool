@@ -1,0 +1,13 @@
+<div class="span6 offset3">
+	<h1>New Course</h1>
+
+	<%= form_for(@course) do |f| %>
+	   	<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :program %>
+		<%= f.text_field :program %>
+
+		<%= f.submit "Create Course", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>

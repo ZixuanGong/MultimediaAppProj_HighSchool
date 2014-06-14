@@ -1,10 +1,12 @@
-<div class="span9 offset3">
-	<ol class="breadcrumb">
-	  <li><%= link_to "Home", root_path%></li>
-	  <li><%= link_to "Departments", departments_path %></li>
-	  <li class="active"><%= format4display(@department)%></li>
-	</ol>
-
+<div class="span9">
+	<nav>
+		<ol class="breadcrumb">
+		  <li><%= link_to "Home", root_path%></li>
+		  <li><%= link_to "Departments", departments_path %></li>
+		  <li class="active"><%= format4display(@department)%></li>
+		</ol>
+    </nav>
+    
 	<h1><%=format4display(@department)%></h1>
 	
 	<ul>
