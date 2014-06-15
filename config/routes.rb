@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   get '/departments', to: 'teachers#departments', via: 'get'
   get '/departments/:department', to: 'teachers#department', via: 'get'
-  get 'pages/application'
-  get 'pages/program'
+  get 'pages/application', to: 'pages#application', via: 'get'
+  get 'pages/program', to: 'pages#program', via: 'get'
   get '/classes', to: 'clas#index', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
