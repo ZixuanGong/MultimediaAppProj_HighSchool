@@ -1,0 +1,10 @@
+<div class="span3">
+	<div class="sidebar">
+		<ul class="nav nav-list">
+			<li class="nav-header">Admission</li>
+			<li class=<%= 'active' if params[:action] == 'index'%>><%= link_to "Application", pages_application_path%></li>
+			<li class=<%= 'active' if params[:action] == 'departments'%>><%= link_to "Programs", pages_program_path%></li>
+		</ul>
+	</div>
+	
+</div>

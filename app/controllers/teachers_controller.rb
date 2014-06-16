@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
-
-acher		@teacher = Teacher.new
+	def new 
+		@teacher = Teacher.new
 	end
 
 	def create
@@ -56,7 +56,5 @@ acher		@teacher = Teacher.new
 	    def teacher_params
 	      params.require(:teacher).permit(:name, :department, :office, :telephone, :email)
 	    end
-
-	
 
 end

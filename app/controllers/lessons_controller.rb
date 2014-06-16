@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
   def create
   	@lesson = Lesson.new(lesson_params)
   	if @lesson.save
-  		redirect_to course_path(Cla.find(params[:cla_id]))
+  		redirect_to course_path(Cla.find(params[:lesson][:cla_id]))
       flash[:success] = "Lesson created!"
   	else
   		render 'new'
@@ -21,7 +21,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to course_path(Cla.find(params[:cla_id]))
+      redirect_to course_path(Cla.find(params[:lesson][:cla_id]))
       flash[:success] = "Lesson updated!"
     else
       render 'edit'
@@ -31,6 +31,6 @@ class LessonsController < ApplicationController
   private
 
     def lesson_params
-      params.require(:lesson).permit(:weekday, :start_at, :end_at, :cla_id, :course_id)
+      params.require(:lesson).permit(:weekday, :time_slot, :cla_id, :course_id)
     end
 end
