@@ -1,7 +1,6 @@
 class TeachersController < ApplicationController
 
-	def new
-		@teacher = Teacher.new
+acher		@teacher = Teacher.new
 	end
 
 	def create
@@ -32,6 +31,10 @@ class TeachersController < ApplicationController
 		@teacher = Teacher.find(params[:id])
 	end
 
+	def timetable
+		@lessons = Teacher.find(params[:id]).lessons
+	end
+
 	def index
 		@teachers = Teacher.all
 	end
@@ -51,7 +54,7 @@ class TeachersController < ApplicationController
 	private
 
 	    def teacher_params
-	      params.require(:teacher).permit(:name, :department)
+	      params.require(:teacher).permit(:name, :department, :office, :telephone, :email)
 	    end
 
 	

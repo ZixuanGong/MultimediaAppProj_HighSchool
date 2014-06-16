@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   
   root 'pages#home'
 
-  get '/departments', to: 'teachers#departments', via: 'get'
-  get '/departments/:department', to: 'teachers#department', via: 'get'
+  get '/teachers_depts', to: 'teachers#departments', via: 'get'
+  get '/teachers_depts/:department', to: 'teachers#department', via: 'get'
+  get '/teachers/show/:id/timetable', to: 'teachers#timetable', via: 'get'
 
   get '/classes', to: 'clas#index', via: 'get'
+
+  get '/courses_by_grade', to: 'courses#by_grade', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

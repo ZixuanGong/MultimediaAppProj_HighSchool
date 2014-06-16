@@ -1,22 +1,36 @@
+<div class="span3 sidebar">
+	<ul class="nav nav-list">
+		<li class="nav-header">Teacher</li>
+		<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Information", teachers_path%></li>
+		<li class=<%= 'active' if params[:action] == 'timetable'%>><%= link_to "Timetable", "/teachers/show/#{@teacher.id}/timetable"%></li>
+	</ul>
+</div>
+
 <!-- if the page is refreshed...oops-->
 <% unless request.referrer.nil? %>
-	<% provide( :prev_page, get_path(request.referrer) )%>
-
 	<ol class="breadcrumb">
 	  <li><%= link_to "Home", root_path%></li>
 
-	  <% if yield(:prev_page) == 'teachers'%>
+	  <% if get_path(request.referrer) == 'teachers'%>
 	  	<li><%= link_to "All Teachers", teachers_path %></li>
 	  <% else %>
-	  	<li><%= link_to "Departments", departments_path %></li>
-	  	<li><%= link_to format4display(@teacher.department), "/departments/#{@teacher.department}" %></li>
+	  	<li><%= link_to "Departments", '/teachers_depts' %></li>
+	  	<li><%= link_to format4display(@teacher.department), "/teachers_depts/#{@teacher.department}" %></li>
 	  <% end %>
 
 	  <li class="active"><%= @teacher.name%></li>
 	</ol>
 <% end %>
 
-
-<h1><%= @teacher.name%></h1>
-<h2><%= @teacher.department%></h2>
-
+<div class="span9">
+	<p><%= @teacher.name%></p>
+	<p><%= @teacher.department%></p>
+	<p><%= @teacher.office%></p>
+	<p><%= @teacher.telephone%></p>
+	<p><%= @teacher.email%></p>
+	<br>
+	<% @teacher.courses.each do |course|%>
+		<p><%= link_to course.name, course_path(course)%></p>
+	<% end %>
+	<%= link_to "Edit", edit_teacher_path(@teacher) %>
+</div>

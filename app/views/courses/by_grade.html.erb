@@ -3,17 +3,18 @@
 <div class="span9">
 	<h1>All Courses</h1>
 	
-	<% Course::DEPARTMENTS.each do |department| %>
-		<% courses_of_dept = @all_courses.select do |course| %>
-			 <% course.department == department %>
+	<% Course::GRADES.each do |grade| %>
+		<% courses_of_grade = @all_courses.select do |course| %>
+			 <% course.grade == grade %>
 		<% end %>	
 
-		<h3><%=department%></h3>
+		<h3><%= "Senior #{grade}"%></h3>
 		<ul>
-			<% courses_of_dept.each do |course| %>
+			<% courses_of_grade.each do |course| %>
 				<li class="inline"><%= link_to course.name, course_path(course.id) %></li>
 			<% end %>
 		</ul>
+		  
 		<br>
 	<% end %>
 

@@ -1,8 +1,18 @@
+<div class="span3 sidebar">
+	<ul class="nav nav-list">
+		<li class="nav-header">Departments</li>
+		<% Teacher::DEPARTMENTS.each do |dept|%>
+			<% dept4url = format4url(dept) %>
+			<li class=<%= 'active' if params[:department] == dept4url%>><%= link_to dept, "/teachers_depts/#{dept4url}"%></li>
+		<% end %>
+	</ul>
+</div>
+
 <div class="span9">
 	<nav>
 		<ol class="breadcrumb">
 		  <li><%= link_to "Home", root_path%></li>
-		  <li><%= link_to "Departments", departments_path %></li>
+		  <li><%= link_to "Departments", '/teachers_depts' %></li>
 		  <li class="active"><%= format4display(@department)%></li>
 		</ol>
     </nav>

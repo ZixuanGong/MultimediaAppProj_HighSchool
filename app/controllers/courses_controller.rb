@@ -4,6 +4,10 @@ class CoursesController < ApplicationController
   	@all_courses = Course.all
   end
 
+  def by_grade
+    @all_courses = Course.all
+  end
+
   def new
   	@course = Course.new
   end
@@ -35,6 +39,7 @@ class CoursesController < ApplicationController
   		render 'edit'
   	end
   end
+
 
   private
 

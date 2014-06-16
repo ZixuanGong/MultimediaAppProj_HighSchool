@@ -1,0 +1,10 @@
+<div class="span3">
+	<div class="sidebar">
+		<ul class="nav nav-list">
+			<li class="nav-header">Courses</li>
+			<li class=<%= 'active' if params[:action] == 'index'%>><%= link_to "Courses by Department", courses_path%></li>
+			<li class=<%= 'active' if params[:action] == 'by_grade'%>><%= link_to "Courses by Grade", '/courses_by_grade'%></li>
+		</ul>
+	</div>
+	
+</div>

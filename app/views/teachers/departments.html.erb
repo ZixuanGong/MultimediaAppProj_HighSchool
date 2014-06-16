@@ -1,9 +1,10 @@
 <%= render 'group_links'%>
+
 <div class="span9">	
 	<h1>Departments</h1>
 	<ul>
 		<% @departments.each do |department|%>
-		<li><%= link_to department, "/departments/#{format4url(department)}"%></li>
+		<li><%= link_to department, "/teachers_depts/#{format4url(department)}"%></li>
 		<% end %>
 	</ul>
 </div>

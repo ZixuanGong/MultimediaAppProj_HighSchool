@@ -1,5 +1,5 @@
 module TeachersHelper
-	
+	attr_accessor :prev_page
 
 	def format4url(dept_name)
 		dept_name.downcase.gsub(/\s+/, '-')
