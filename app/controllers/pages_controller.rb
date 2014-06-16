@@ -5,8 +5,10 @@ class PagesController < ApplicationController
   def application
   end
 
-  def programs
+  def faq
   end
 
+  def checklist
+  end
 
 end
