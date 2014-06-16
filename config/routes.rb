@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
 
+
+
   resources :teachers
   resources :courses
   resources :clas
   resources :lessons
-  
+
   root 'pages#home'
 
   get '/teachers_depts', to: 'teachers#departments', via: 'get'
   get '/teachers_depts/:department', to: 'teachers#department', via: 'get'
   get '/teachers/show/:id/timetable', to: 'teachers#timetable', via: 'get'
+
+
+  
+  get 'pages/application', to: 'pages#application', via: 'get'
+  get 'pages/faq', to: 'pages#faq', via: 'get'
+  get 'pages/checklist', to: 'pages#checklist', via: 'get'
 
   get '/classes', to: 'clas#index', via: 'get'
 

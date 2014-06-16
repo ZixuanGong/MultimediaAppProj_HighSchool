@@ -1,0 +1,12 @@
+<div class="span3">
+	<div class="sidebar">
+		<ul class="nav nav-list">
+			<img src="http://www.regis.org/images/Admissions/Nav_Pic_58.jpg" />
+			<li class="nav-header">Admission</li>
+			<li class=<%= 'active' if params[:action] == 'application'%>><%= link_to "Application", pages_application_path%></li>
+			<li class=<%= 'active' if params[:action] == 'faq'%>><%= link_to "FAQ's", pages_faq_path%></li>
+			<li class=<%= 'active' if params[:action] == 'checklist'%>><%= link_to "Checklist", pages_checklist_path%></li>
+		</ul>
+	</div>
+	
+</div>
