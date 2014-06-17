@@ -1,1 +1,22 @@
-<h1>test</h1>
+ <%= render "structural_links", teacher: @teacher %>
+
+<div class="span9">
+	<table class="table">
+		<tr>
+			<th>Course</th>
+			<th>Schedule</th>
+			<th>Class</th>
+		</tr>
+
+		<% @teacher.courses.each do |course|%>
+			<% course.lessons.each do |lesson|%>
+				<tr>
+					<td><%= course.name%></td>
+					<td><%= lesson.time_slot%></td>
+					<td><%= full_class_name(Cla.find(lesson.cla_id))%></td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+
+</div>

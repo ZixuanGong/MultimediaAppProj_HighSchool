@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   resources :teachers
   resources :courses
   resources :clas
@@ -11,8 +9,7 @@ Rails.application.routes.draw do
 
   get '/teachers_depts', to: 'teachers#departments', via: 'get'
   get '/teachers_depts/:department', to: 'teachers#department', via: 'get'
-  get '/teachers/show/:id/timetable', to: 'teachers#timetable', via: 'get'
-
+  get '/teachers/:id/timetable' => 'teachers#timetable', as: :timetable
 
   
   get 'pages/application', to: 'pages#application', via: 'get'

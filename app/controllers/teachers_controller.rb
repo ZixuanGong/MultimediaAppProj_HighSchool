@@ -32,7 +32,7 @@ class TeachersController < ApplicationController
 	end
 
 	def timetable
-		@lessons = Teacher.find(params[:id]).lessons
+		@teacher = Teacher.find(params[:id])
 	end
 
 	def index

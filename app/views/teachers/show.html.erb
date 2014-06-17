@@ -1,10 +1,4 @@
-<div class="span3 sidebar">
-	<ul class="nav nav-list">
-		<li class="nav-header">Teacher</li>
-		<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Information", teachers_path%></li>
-		<li class=<%= 'active' if params[:action] == 'timetable'%>><%= link_to "Timetable", "/teachers/show/#{@teacher.id}/timetable"%></li>
-	</ul>
-</div>
+<%= render "structural_links", teacher: @teacher%>
 
 <!-- if the page is refreshed...oops-->
 <% unless request.referrer.nil? %>
