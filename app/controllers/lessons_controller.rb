@@ -28,9 +28,13 @@ class LessonsController < ApplicationController
     end
   end
 
+
+
   private
 
     def lesson_params
       params.require(:lesson).permit(:weekday, :time_slot, :cla_id, :course_id)
     end
+
+
 end
