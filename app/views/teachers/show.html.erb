@@ -16,8 +16,12 @@
 	</ol>
 <% end %>
 
-<div class="span9 offset1">
-	<p><%= @teacher.name%></p>
+
+<div class="panel panel-info span9 offset1">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @teacher.name%></h3>
+  </div>
+  <div class="panel-body">
 	<p><%= @teacher.department%></p>
 	<p><%= @teacher.office%></p>
 	<p><%= @teacher.telephone%></p>
@@ -27,4 +31,5 @@
 		<p><%= link_to course.name, course_path(course)%></p>
 	<% end %>
 	<%= link_to "Edit", edit_teacher_path(@teacher) %>
+  </div>
 </div>
