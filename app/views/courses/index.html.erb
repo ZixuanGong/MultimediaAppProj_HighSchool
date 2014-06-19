@@ -7,14 +7,20 @@
 		<% courses_of_dept = @all_courses.select do |course| %>
 			 <% course.department == department %>
 		<% end %>	
-
-		<h3><%=department%></h3>
-		<ul>
-			<% courses_of_dept.each do |course| %>
+		<div class="panel panel-default" style="height:100px">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%=department%></h3>
+			</div>
+			<div class="panel-body">
+				<ul>
+				<% courses_of_dept.each do |course| %>
 				<li class="inline"><%= link_to course.name, course_path(course.id) %></li>
-			<% end %>
-		</ul>
-		<br>
+				<% end %>
+				</ul>
+			</div>
+
+		<div>
+				<br>
 	<% end %>
 
 	<%= link_to "New Course", new_course_path%>
