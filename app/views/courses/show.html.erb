@@ -15,6 +15,8 @@
 	<p>Teacher: <%= link_to Teacher.find(@course.teacher_id).name, teacher_path(@course.teacher_id)%></p>
 
 	<%= link_to 'All Courses', courses_path%>
-	<%= link_to 'Edit', edit_course_path%>
+	<% if signed_in? %>
+		<%= link_to 'Edit', edit_course_path%>
+	<% end %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <%= render 'group_links'%>
 
-<div class="span9 offset1">
+<div class="span9">
 	<h1>All Teachers</h1>
 	<table class="table">
 	  <tr>
@@ -17,6 +17,7 @@
 	</table>
 
 	<br>
-
-	<%= link_to "New Teacher", new_teacher_path%>
+	<% if signed_in? %>
+		<%= link_to "New Teacher", new_teacher_path%>
+	<% end %>
 </div>

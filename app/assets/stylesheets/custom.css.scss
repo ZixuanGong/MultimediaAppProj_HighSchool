@@ -2,8 +2,18 @@
 
 /* universal */
 body {
-  padding-top: 60px;
+  margin: 0px;
+  padding-top: 50px;
+  background-color: #eee !important;
 }
+
+.center-container {
+  background-color: white;
+  width: 1000px;
+  margin: 10px auto;
+  padding: 0px 20px 10px 10px;
+}
+
 
 .center {
   text-align: center;
@@ -13,13 +23,34 @@ body {
 }
 
 .sidebar {
-  margin-top: 80px;
+  margin-top: 50px;
+  padding-left: 20px;
 }
 
 .inline {
   display: inline;
   margin-right: 20px;
 }
+/* homepage */
+.jumbotron {
+  background-attachment: fixed;
+  background-image: url('/assets/background.jpeg');
+
+  background-position: center;
+  background-size: cover;
+  height: 430px;
+  position: relative;
+  width: 100%;
+}
+
+#home_pic {
+  margin-bottom: 0;
+}
+
+.content{
+  margin: 0,50px,0,50px;
+}
+
 /* header */
 #logo {
   float: left;
@@ -38,6 +69,12 @@ body {
   }
 }
 
+ul.navbar-nav a{
+  color: white !important;
+  font-size: 1.3em;
+  font-weight: 1.5em;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,7 +87,9 @@ h1 {
   margin-bottom: 30px;
 }
 
-
+h2 {
+  font-size: 1.5em;
+}
 
 p {
   font-size: 1.1em;
@@ -62,6 +101,8 @@ input, textarea{
   width: 100%;
   display: block;
   margin-bottom: 15px;
+  height: auto !important;
+
 }
 
 select{
@@ -87,14 +128,7 @@ select{
   box-sizing: border-box;*/
 }
 
-#homepage {
-  padding: 0;
 
-}
-
-#homevideo {
-  margin-left: 80px;
-}
 
 #department_panel {
   margin-top: 80px;
