@@ -17,5 +17,7 @@
 		<br>
 	<% end %>
 
-	<%= link_to "New Course", new_course_path%>
+	<% if signed_in? %>
+		<%= link_to "New Course", new_course_path%>
+	<% end %>
 </div>

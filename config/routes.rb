@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :courses
   resources :clas
   resources :lessons
+  resources :sessions, only: [:new, :create, :destroy]
+
 
   root 'pages#home'
 
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/courses_by_grade', to: 'courses#by_grade', via: 'get'
 
+  get '/signin' => 'sessions#new', via: 'get'
+  get '/signout' => 'sessions#destroy', via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
