@@ -1,11 +1,11 @@
-<div class="span3">
-	<div class="sidebar">
+<div class="span3 well sidebar">
+
 		<ul class="nav nav-list">
 			<img src="http://www.regis.org/images/Admissions/Nav_Pic_49.jpg" />
 			<li class="nav-header">Teachers</li>
 			<li class=<%= 'active' if params[:action] == 'index'%>><%= link_to "All Teachers", teachers_path%></li>
 			<li class=<%= 'active' if params[:action] == 'departments'%>><%= link_to "Teachers by Departments", '/teachers_depts'%></li>
 		</ul>
-	</div>
+
 </div>
 

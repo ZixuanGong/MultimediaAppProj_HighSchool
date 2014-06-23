@@ -1,5 +1,5 @@
-<div class="span3">
-	<div class="well sidebar-nav">
+<div class="span3 well sidebar">
+
 		<ul class="nav nav-list">
 			<li class="nav-header">Our Class</li>
 			<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Description", cla_path(@cla)%></li>
@@ -10,10 +10,10 @@
 				<li><%= link_to course.name, course_path(course)%></li>
 			<% end %>
 		</ul>
-	</div>
+
 </div>
 
-<div class="span6 offset1 panel panel-success">
+<div class="span6 offset1 panel panel-success" id="class_desc">
 	<div class="panel-heading">
 	<h3 class="panel-title">Class: <%= full_class_name(@cla)%></h3>
 	<% if signed_in? %>

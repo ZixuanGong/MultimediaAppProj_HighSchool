@@ -2,13 +2,19 @@
 
 <div class="span9">
 
-	<h1>All Classes</h1>
+	<h1 style="text-align:center">All Classes</h1>
+	<table class="table">
+	<tr>
+		<th>Class Name</th>
+	</tr>
 
 	<% @clas.each do |c| %>
-		<p><%= link_to full_class_name(c), cla_path(c)%></p>
+	<tr>
+		<td><%= link_to full_class_name(c), cla_path(c)%></td>
+	</tr>
 	<% end %>
-	
-
+			    
+	</table>
 </div>
 
 

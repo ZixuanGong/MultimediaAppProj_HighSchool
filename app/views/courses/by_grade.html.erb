@@ -1,7 +1,8 @@
 <%= render 'group_links'%>
 
 <div class="span9">
-	<h1>Courses by Grade</h1>
+	<h1 style="text-align:center">Courses by Grade</h1>
+	<br><br>
 	
 	<% Course::GRADES.each do |grade| %>
 		<% courses_of_grade = @all_courses.select do |course| %>
