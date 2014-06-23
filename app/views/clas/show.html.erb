@@ -3,7 +3,7 @@
 		<ul class="nav nav-list">
 			<li class="nav-header">Our Class</li>
 			<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Description", cla_path(@cla)%></li>
-			<li><%= link_to "Photos", "#"%></li>
+			<li class=<%= 'active' if params[:action] == 'photos'%>><%= link_to "Photos", photos_path(@cla)%></li>
 
 			<li class="nav-header">Courses We Take</li>
 			<% @courses.each do |course| %>
@@ -13,10 +13,12 @@
 	</div>
 </div>
 
-<div class="span6">
-	<p>Class: <%= full_class_name(@cla)%></p>
+<div class="span6 offset1 panel panel-success">
+	<div class="panel-heading">
+	<h3 class="panel-title">Class: <%= full_class_name(@cla)%></h3>
 	<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
-
+	</div>
+	<div class="panel-body">
 	<table>
 		<tr>
 			<th>Course</th>
@@ -32,5 +34,6 @@
 			</tr>
 		<% end %>
 	</table>
-	
+	</div>
 </div>
+

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'pages/checklist', to: 'pages#checklist', via: 'get'
 
   get '/classes', to: 'clas#index', via: 'get'
+  get '/clas/:id/photos', to:'clas#photos', as: :photos
 
   get '/courses_by_grade', to: 'courses#by_grade', via: 'get'
 

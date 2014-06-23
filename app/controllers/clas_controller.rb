@@ -9,5 +9,11 @@ class ClasController < ApplicationController
   	@lessons = Lesson.all.select{|lesson| lesson.cla_id == @cla.id}
   end
 
+  def photos
+  	@cla = Cla.find(params[:id])
+  	@courses = @cla.courses
+  	@lessons = Lesson.all.select{|lesson| lesson.cla_id == @cla.id}
+  end
+
   
 end

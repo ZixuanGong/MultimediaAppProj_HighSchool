@@ -1,6 +1,6 @@
 <%= render 'group_links'%>
 
-<div class="span9">
+<div class="span9 offset1">
 	<h1>All Courses</h1>
 	
 	<% Course::GRADES.each do |grade| %>
@@ -8,12 +8,19 @@
 			 <% course.grade == grade %>
 		<% end %>	
 
-		<h3><%= "Senior #{grade}"%></h3>
-		<ul>
-			<% courses_of_grade.each do |course| %>
+		<div class="panel panel-default" style="height:100px">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= "Senior #{grade}"%></h3>
+			</div>
+			<div class="panel-body">
+				<ul>
+				<% courses_of_grade.each do |course| %>
 				<li class="inline"><%= link_to course.name, course_path(course.id) %></li>
-			<% end %>
-		</ul>
+				<% end %>
+				</ul>
+			</div>
+
+		<div>
 		  
 		<br>
 	<% end %>
