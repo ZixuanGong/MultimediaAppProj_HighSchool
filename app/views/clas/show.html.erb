@@ -15,20 +15,26 @@
 
 <div class="span6">
 	<p>Class: <%= full_class_name(@cla)%></p>
-	<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
+	<% if signed_in? %>
+		<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
+	<% end %>
 
 	<table>
 		<tr>
 			<th>Course</th>
 			<th>Schedule</th>
-			<th></th>
+			<% if signed_in? %>
+				<th></th>
+			<% end %>
 		</tr>
 
 		<% @lessons.each do |lesson| %>
 			<tr>
 				<td><%= Course.find(lesson.course_id).name %></td>
 				<td><%= lesson.time_slot %></td>
-				<td><%= link_to "Edit", edit_lesson_path(lesson)%></td>
+				<% if signed_in? %>
+					<td><%= link_to "Edit", edit_lesson_path(lesson)%></td>
+				<% end %>
 			</tr>
 		<% end %>
 	</table>
