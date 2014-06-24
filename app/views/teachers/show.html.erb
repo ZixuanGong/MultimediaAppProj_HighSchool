@@ -30,6 +30,9 @@
 	<% @teacher.courses.each do |course|%>
 		<p><%= link_to course.name, course_path(course)%></p>
 	<% end %>
+
+	<% if signed_in? %>
 	<%= link_to "Edit", edit_teacher_path(@teacher) %>
+	<% end %>
   </div>
 </div>
