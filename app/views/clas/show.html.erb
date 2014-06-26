@@ -13,34 +13,39 @@
 
 </div>
 
-<div class="span6 offset1 panel panel-success" id="class_desc">
-	<div class="panel-heading">
-	<h3 class="panel-title">Class: <%= full_class_name(@cla)%></h3>
-	<% if signed_in? %>
-		<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
-	<% end %>
-	</div>
-	<div class="panel-body">
+<div class="span9">
+	<h1><%= full_class_name(@cla)%></h1>
 
-	<table>
-		<tr>
-			<th>Course</th>
-			<th>Schedule</th>
-			<% if signed_in? %>
-				<th></th>
-			<% end %>
-		</tr>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h3 class="panel-title">Time Table</h3>
+		
+		</div>
+		<div class="panel-body">
 
-		<% @lessons.each do |lesson| %>
+		<table>
 			<tr>
-				<td><%= Course.find(lesson.course_id).name %></td>
-				<td><%= lesson.time_slot %></td>
+				<th>Course</th>
+				<th>Schedule</th>
 				<% if signed_in? %>
-					<td><%= link_to "Edit", edit_lesson_path(lesson)%></td>
+					<th></th>
 				<% end %>
 			</tr>
-		<% end %>
-	</table>
+
+			<% @lessons.each do |lesson| %>
+				<tr>
+					<td><%= Course.find(lesson.course_id).name %></td>
+					<td><%= lesson.time_slot %></td>
+					<% if signed_in? %>
+						<td><%= link_to "Edit", edit_lesson_path(lesson)%></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+		</div>
 	</div>
+	<% if signed_in? %>
+			<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
+		<% end %>
 </div>
 

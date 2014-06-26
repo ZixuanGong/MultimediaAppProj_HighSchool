@@ -1,21 +1,20 @@
 <%= render 'group_links'%>
 
-<div class="span9">
-	<h1 style="text-align:center">Courses by Department</h1>
-	<br><br>
+<div class="span9 content">
+	<h1>Courses by Department</h1>
 	
 	<% Course::DEPARTMENTS.each do |department| %>
 		<% courses_of_dept = @all_courses.select do |course| %>
 			 <% course.department == department %>
 		<% end %>	
-		<div class="panel panel-default" style="height:100px">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title"><%=department%></h3>
 			</div>
 			<div class="panel-body">
 				<ul>
 				<% courses_of_dept.each do |course| %>
-				<li><%= link_to course.name, course_path(course.id) %></li>
+				<li><%= link_to course.name, course_path(course) %></li>
 				<% end %>
 				</ul>
 			</div>
@@ -24,6 +23,7 @@
 	<% end %>
 
 	<% if signed_in? %>
-		<%= link_to "New Course", new_course_path%>
+		<%= button_to('New Course', new_course_path, :class => 'btn btn-large btn-primary')  %>
 	<% end %>
 </div>
+

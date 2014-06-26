@@ -2,24 +2,10 @@
 
 /* universal */
 body {
-  margin: 0px;
   padding-top: 50px;
   background: url('/assets/light_noise_diagonal.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
-.center-container {
-  background: url('/assets/lightpaperfibers.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
-  width: 1000px;
-  margin-top: 10px;
-}
-
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
-}
 
 .sidebar {
   margin-top: 20px;
@@ -32,6 +18,12 @@ body {
   ul{
     padding-left: 15px;
   }
+}
+
+#wrapper{
+  width: 900px;
+  background: url('/assets/lightpaperfibers.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
+  padding-bottom: 10px;
 }
 
 .content{
@@ -54,12 +46,29 @@ body {
   width: 100%;
 }
 
-#home_pic {
+#home-pic {
   margin-bottom: 0;
+}
+
+#home-container{
+  h1{
+    border: none;
+  }
 }
 
 .content{
   margin: 0,50px,0,50px;
+
+  ul > li{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  h1{
+    /*text-align: center;*/
+    padding-bottom: 5px;
+    /*border-top: 1px solid $grayLight;*/
+  }
 }
 
 /* header */
@@ -88,14 +97,14 @@ ul.navbar-nav a{
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6{
   line-height: 1;
 }
 
 h1 {
-  font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
+  border-bottom: 1px, solid, $grayLight !important;
 }
 
 h2 {
@@ -106,6 +115,8 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+
 
 /* form */
 input, textarea{
@@ -123,20 +134,32 @@ select{
 
 
 /* breadcrumbs*/
-.breadcrumb > li + li:before {
-  content: '/';
+.breadcrumb {
+  margin-top: 10px;
+
+  & > li + li:before {
+    content: '>>';
+  }
+
 }
 
 /* footer */
 
 footer {
-  padding-top: 5px;
-  color: $grayLight;
-  margin-right: auto;
-  margin-left: auto;
   
-}
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 2em;
+  margin: 5px auto 0 auto;
+  border-top: 1px solid $grayLight;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
+  center {
+    color: $grayLight;
+  }
+}
 
 /* others */
 .debug_dump {

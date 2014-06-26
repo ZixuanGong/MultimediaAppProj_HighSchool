@@ -1,21 +1,25 @@
 <%= render 'group_link' %>
 
-<div class="span9">
+<div class="span9 content">
 
-	<h1 style="text-align:center">All Classes</h1>
-	<table class="table">
-	<tr>
-		<th>Class Name</th>
-	</tr>
+	<h1>All Classes</h1>
 
-	<% @clas.each do |c| %>
-	<tr>
-		<td><%= link_to full_class_name(c), cla_path(c)%></td>
-	</tr>
+	<% Cla::GRADES.each do |grade|%>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><%="Senior #{grade}"%></h3>
+			</div>
+			<% classes_of_grade = @clas.select{ |c| c.grade == grade}%>
+
+			<div class="panel-body">
+				<ul>
+				<% classes_of_grade.each do |c| %>
+				<li><%= link_to full_class_name(c), cla_path(c)%></li>
+				<% end %>
+				</ul>
+			</div>
+
+		</div>
 	<% end %>
-			    
-	</table>
 </div>
-
-
-

@@ -1,0 +1,24 @@
+ <%= render "structural_links", course: @course %>
+
+<div class="span9 content">
+
+	<%= render 'courses/breadcrumb'%>
+	
+	<h1>Time Table</h1>
+	<table class="table">
+		<tr>
+			<th>Weekday</th>
+			<th>Schedule</th>
+			<th>Class</th>
+		</tr>
+
+		<% @course.lessons.each do |lesson|%>
+			<tr>
+				<td><%= lesson.weekday%></td>
+				<td><%= lesson.time_slot%></td>
+				<td><%= link_to full_class_name(lesson.cla_id), cla_path(lesson.cla_id)%></td>
+			</tr>
+		<% end %>
+	</table>
+
+</div>

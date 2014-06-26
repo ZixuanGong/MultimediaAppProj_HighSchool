@@ -1,35 +1,38 @@
 <%= render "structural_links", teacher: @teacher%>
 
-<!-- if the page is refreshed...oops-->
-<% unless request.referrer.nil? %>
-	<ol class="breadcrumb">
-	  <li><%= link_to "Home", root_path%></li>
+<div class="span9 content">
+	<!-- if the page is refreshed...oops-->
+	<% unless request.referrer.nil? %>
+		<ol class="breadcrumb">
+		  <li><%= link_to "Home", root_path%></li>
 
-	  <% if get_path(request.referrer) == 'teachers'%>
-	  	<li><%= link_to "All Teachers", teachers_path %></li>
-	  <% else %>
-	  	<li><%= link_to "Departments", '/teachers_depts' %></li>
-	  	<li><%= link_to format4display(@teacher.department), "/teachers_depts/#{@teacher.department}" %></li>
-	  <% end %>
+		  <% if get_path(request.referrer) == 'teachers'%>
+		  	<li><%= link_to "All Teachers", teachers_path %></li>
+		  <% else %>
+		  	<li><%= link_to "Departments", '/teachers_depts' %></li>
+		  	<li><%= link_to format4display(@teacher.department), "/teachers_depts/#{@teacher.department}" %></li>
+		  <% end %>
 
-	  <li class="active"><%= @teacher.name%></li>
-	</ol>
-<% end %>
-
-
-<div class="panel panel-info span9">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= @teacher.name%></h3>
-  </div>
-  <div class="panel-body">
-	<p><%= @teacher.department%></p>
-	<p><%= @teacher.office%></p>
-	<p><%= @teacher.telephone%></p>
-	<p><%= @teacher.email%></p>
-	<br>
-	<% @teacher.courses.each do |course|%>
-		<p><%= link_to course.name, course_path(course)%></p>
+		  <li class="active"><%= @teacher.name%></li>
+		</ol>
 	<% end %>
-	<%= link_to "Edit", edit_teacher_path(@teacher) %>
-  </div>
+
+
+	<h1><%= @teacher.name%></h1>
+	  
+	  
+		<p>Department: <%= @teacher.department%></p>
+		<p>Office: <%= @teacher.office%></p>
+		<p>Telephone: <%= @teacher.telephone%></p>
+		<p>Email: <%= @teacher.email%></p>
+		
+		<h2>Courses Related</h2>
+		<% @teacher.courses.each do |course|%>
+			<p><%= link_to course.name, course_path(course)%></p>
+		<% end %>
+
+		<% if signed_in? %>
+			<%= link_to "Edit", edit_teacher_path(@teacher) %>
+		<% end %>
+	  
 </div>

@@ -40,6 +40,10 @@ class CoursesController < ApplicationController
   	end
   end
 
+  def timetable
+    @course = Course.find(params[:id])
+  end
+
 
   private
 

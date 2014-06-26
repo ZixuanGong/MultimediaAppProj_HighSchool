@@ -1,22 +1,14 @@
 <%= render 'group_links'%>
-<div class="span9">
-	<h1 style="text-align:center">All departments</h1><br><br>
+<div class="span9">			
 
-	<div class="panel panel-primary">
-		<div class="panel-heading">
+	<div class="content">
+	<h1>All departments</h1>	
+	<ul>
+		<% @departments.each do |department|%>
+		<li><%= link_to department, "/teachers_depts/#{format4url(department)}"%></li>
+		<% end %>
+	</ul>
 
-			<h3 class="panel-title">Departments</h3>
-		</div>
-
-		<div class="panel-body">
-
-		<ul>
-			<% @departments.each do |department|%>
-			<li><p><%= link_to department, "/teachers_depts/#{format4url(department)}"%></p></li>
-			<% end %>
-		</ul>
-
-		</div>
 	</div>
 </div>
 

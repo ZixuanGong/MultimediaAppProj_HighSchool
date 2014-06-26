@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/clas/:id/photos', to:'clas#photos', as: :photos
 
   get '/courses_by_grade', to: 'courses#by_grade', via: 'get'
+  get '/courses/:id/timetable' => 'courses#timetable', as: :course_timetable
 
   get '/signin' => 'sessions#new', via: 'get'
   get '/signout' => 'sessions#destroy', via: 'delete'
