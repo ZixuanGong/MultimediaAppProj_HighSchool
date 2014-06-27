@@ -1,6 +1,7 @@
 <%= render 'group_links'%>
 
 <div class="span9 content">
+	<%= render 'layouts/breadcrumb'%>
 	<h1>Courses by Grade</h1>
 
 	<% Course::GRADES.each do |grade| %>

@@ -1,7 +1,8 @@
 <%= render 'group_links'%>
-<div class="span9">			
+<div class="span9 content">			
 
-	<div class="content">
+	<%= render 'layouts/breadcrumb'%>
+
 	<h1>All departments</h1>	
 	<ul>
 		<% @departments.each do |department|%>
@@ -9,6 +10,5 @@
 		<% end %>
 	</ul>
 
-	</div>
 </div>
 

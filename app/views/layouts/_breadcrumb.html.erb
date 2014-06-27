@@ -1,0 +1,43 @@
+<ol class="breadcrumb">
+	<li><%= link_to "Home", root_path%></li>
+
+	<% if params[:controller] == 'teachers' %>
+		<% if params[:action] == 'index' || params[:action] == 'departments'  %>
+			<li>Teachers</li>
+
+		<% elsif params[:action] == 'show' || params[:action] == 'timetable' %>
+
+			<% if get_prev_path == 'teachers'%>
+				<li><%= link_to "All Teachers", teachers_path %></li>
+			<% else %>
+				<li><%= link_to "Departments",  departments_path%></li>
+				<li><%= link_to @teacher.department, department_path(format4url(@teacher.department)) %></li>
+			<% end %>
+
+			<li class="active"><%= @teacher.name%></li>	
+
+		<% elsif params[:action] == 'department'  %>
+			<li><%= link_to "Departments", '/teachers_depts' %></li>
+			<li class="active"><%= format4display(@department)%></li>
+		<% end %>
+	<% end %>
+
+	<% if params[:controller] == 'courses' %>
+
+		<% if params[:action] == 'index' || params[:action] == 'by_grade' %>
+			<li>Courses</li>
+		<% end %>
+
+		<% if params[:action] == 'show' %>
+			<% if get_prev_path == 'courses'%>
+				<li><%= link_to "Courses by Department", courses_path %></li>
+			<% else %>
+				<li><%= link_to "Courses by Grade",  courses_by_grade_path%></li>
+			<% end %>
+
+			<li class="active"><%= @course.name%></li>	
+		<% end %>
+	<% end %>
+
+</ol>
+

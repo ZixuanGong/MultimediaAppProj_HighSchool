@@ -1,9 +1,12 @@
-<div class="span3 sidebar well">
+<div class="sidebar span3">
 	<img src="http://www.regis.org/images/Admissions/Nav_Pic_49.jpg" />
-	<ul class="nav nav-list">
-		<li class="nav-header">Course</li>
-		<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Information", course_path(course)%></li>
-		<li class=<%= 'active' if params[:action] == 'timetable'%>><%= link_to "Timetable", course_timetable_path(course)%></li>
-	</ul>
+	<div class="well">
+		
+		<ul class="nav nav-list">
+			<li class="nav-header">Course</li>
+			<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Information", course_path(course)%></li>
+			<li class=<%= 'active' if params[:action] == 'timetable'%>><%= link_to "Timetable", course_timetable_path(course)%></li>
+		</ul>
+	</div>
 </div>
 

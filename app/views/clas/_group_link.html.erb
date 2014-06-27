@@ -1,12 +1,15 @@
-<div class="span3 sidebar well">
+<div class="sidebar span3">
 	<img src="http://www.regis.org/images/Admissions/Nav_Pic_57.jpg" />
-	<ul class="nav nav-list">
-
+	<div class="well">
 		
-		<li class="nav-header">Classes</li>
+		<ul class="nav nav-list">
 
-		<li class=<%= 'active' if params[:action] == 'index'%>><%= link_to "All Classes", clas_path%></li>
+			
+			<li class="nav-header">Classes</li>
 
-	</ul>
+			<li class=<%= 'active' if params[:action] == 'index'%>><%= link_to "All Classes", clas_path%></li>
+
+		</ul>
+	</div>
 </div>
 

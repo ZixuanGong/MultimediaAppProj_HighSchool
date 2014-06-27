@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get '/teachers_depts', to: 'teachers#departments', via: 'get'
-  get '/teachers_depts/:department', to: 'teachers#department', via: 'get'
+  get '/teachers_depts', to: 'teachers#departments', as: :departments
+  get '/teachers_depts/:department', to: 'teachers#department', as: :department
   get '/teachers/:id/timetable' => 'teachers#timetable', as: :timetable
 
   

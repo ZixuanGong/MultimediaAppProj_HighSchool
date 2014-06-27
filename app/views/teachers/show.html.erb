@@ -1,22 +1,10 @@
+<% set_prev_page(request.referrer) %>
+
 <%= render "structural_links", teacher: @teacher%>
 
 <div class="span9 content">
-	<!-- if the page is refreshed...oops-->
-	<% unless request.referrer.nil? %>
-		<ol class="breadcrumb">
-		  <li><%= link_to "Home", root_path%></li>
 
-		  <% if get_path(request.referrer) == 'teachers'%>
-		  	<li><%= link_to "All Teachers", teachers_path %></li>
-		  <% else %>
-		  	<li><%= link_to "Departments", '/teachers_depts' %></li>
-		  	<li><%= link_to format4display(@teacher.department), "/teachers_depts/#{@teacher.department}" %></li>
-		  <% end %>
-
-		  <li class="active"><%= @teacher.name%></li>
-		</ol>
-	<% end %>
-
+	<%= render 'layouts/breadcrumb'%>
 
 	<h1><%= @teacher.name%></h1>
 	  
