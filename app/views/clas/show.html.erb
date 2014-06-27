@@ -47,5 +47,7 @@
 	<% if signed_in? %>
 			<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
 		<% end %>
+
+	<%= link_to "Back to all classes", clas_path%>
 </div>
 

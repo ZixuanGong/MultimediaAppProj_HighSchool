@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/teachers_depts', to: 'teachers#departments', as: :departments
   get '/teachers_depts/:department', to: 'teachers#department', as: :department
   get '/teachers/:id/timetable' => 'teachers#timetable', as: :timetable
+  get '/teachers/:id/courses_related' => 'teachers#courses_related', as: :courses_related
 
   
   get 'pages/application', to: 'pages#application', via: 'get'

@@ -14,10 +14,9 @@
 		<p>Telephone: <%= @teacher.telephone%></p>
 		<p>Email: <%= @teacher.email%></p>
 		
-		<h2>Courses Related</h2>
-		<% @teacher.courses.each do |course|%>
-			<p><%= link_to course.name, course_path(course)%></p>
-		<% end %>
+	<button type="button" class="btn btn-default" id="courses_related">
+		<%= link_to "Courses related", courses_related_path(@teacher)%></li>
+	</button>	
 
 		<% if signed_in? %>
 			<%= link_to "Edit", edit_teacher_path(@teacher) %>
