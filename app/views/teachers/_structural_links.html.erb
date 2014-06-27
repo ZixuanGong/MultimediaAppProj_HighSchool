@@ -4,6 +4,7 @@
 		<li class="nav-header">Teacher</li>
 		<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Information", teacher_path(teacher)%></li>
 		<li class=<%= 'active' if params[:action] == 'timetable'%>><%= link_to "Timetable", timetable_path(teacher)%></li>
+
 	</ul>
 </div>
 

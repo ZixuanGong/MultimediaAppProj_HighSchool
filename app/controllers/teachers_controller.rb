@@ -51,6 +51,10 @@ class TeachersController < ApplicationController
 		end
 	end
 
+	def courses_related
+		@teacher = Teacher.find(params[:id])
+	end
+
 	private
 
 	    def teacher_params
