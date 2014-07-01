@@ -1,23 +1,22 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="navbar-header">
-			<% if true %>
-				<%= link_to( image_tag("logo.jpg"), root_path)%>
-			<% end %>
+<header id="nav" class="navbar-fixed-top">
+	<div class="navbar-header">
+		<% if true %>
+			<%= link_to( image_tag("logo.jpg"), root_path)%>
+		<% end %>
 <!--			<%= link_to "Regis High School", root_path%> -->
-		</div>
-		<ul class="nav navbar-nav pull-right">
-			<li><%= link_to "Admission", pages_application_path%></li>
-			<li><%= link_to "Teachers", teachers_path%></li>
-			<li><%= link_to "Courses", courses_path%></li>
-			<li><%= link_to "Classes", clas_path%></li>
-			<% if signed_in? %>
-				<li><%= link_to "Signout", signout_path%></li>
-			<% else %>
-				<li><%= link_to "Signin", signin_path%></li>
-			<% end %>
-
-		</ul>
 	</div>
+	<ul class="nav navbar-nav pull-right">
+		
+		<li><%= link_to "Admission", pages_application_path%></li>
+		<li><%= link_to "Teachers", teachers_path%></li>
+		<li><%= link_to "Courses", courses_path%></li>
+		<li><%= link_to "Classes", classes_path%></li>
+		<% if signed_in? %>
+			<li><%= link_to "Signout", signout_path%></li>
+		<% else %>
+			<li><%= link_to "Signin", signin_path%></li>
+		<% end %>
+
+	</ul>
 
 </header>

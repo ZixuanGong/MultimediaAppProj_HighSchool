@@ -1,6 +1,7 @@
 <%= render 'group_link' %>
 
 <div class="span9 content">
+	<%= render 'layouts/breadcrumb'%>
 
 	<h1>All Classes</h1>
 
@@ -15,7 +16,7 @@
 			<div class="panel-body">
 				<ul>
 				<% classes_of_grade.each do |c| %>
-				<li><%= link_to full_class_name(c), cla_path(c)%></li>
+				<li><%= link_to full_class_name(c), class_path(c)%></li>
 				<% end %>
 				</ul>
 			</div>

@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   get 'pages/faq', to: 'pages#faq', via: 'get'
   get 'pages/checklist', to: 'pages#checklist', via: 'get'
 
-  get '/classes', to: 'clas#index', via: 'get'
-  get '/clas/:id/photos', to:'clas#photos', as: :photos
+  get '/classes', to: 'clas#index', as: :classes
+  get '/classes/:id', to: 'clas#show', as: :class
+  get '/classes/:id/photos', to:'clas#photos', as: :photos
 
   get '/courses_by_grade', to: 'courses#by_grade', via: 'get'
   get '/courses/:id/timetable' => 'courses#timetable', as: :course_timetable
