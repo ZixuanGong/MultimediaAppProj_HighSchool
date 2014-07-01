@@ -1,17 +1,4 @@
-<div class="span3 well sidebar">
-
-	<ul class="nav nav-list">
-		<li class="nav-header">Our Class</li>
-		<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Description", class_path(@cla)%></li>
-		<li class=<%= 'active' if params[:action] == 'photos'%>><%= link_to "Photos", photos_path(@cla)%></li>
-
-		<li class="nav-header">Courses We Take</li>
-		<% @courses.each do |course| %>
-			<li><%= link_to course.name, course_path(course)%></li>
-		<% end %>
-	</ul>
-
-</div>
+<%= render 'structural_links'%>
 
 <div class="span9 content">
 	<%= render 'layouts/breadcrumb'%>
@@ -25,6 +12,7 @@
 			<th>Day</th>
 			<th>Schedule</th>
 			<th>Course</th>
+			<th>Teacher</th>
 			
 			<% if signed_in? %>
 				<th></th>
@@ -36,7 +24,9 @@
 			<tr>
 				<td><%= lesson.weekday%></td>
 				<td><%= lesson.time_slot %></td>
-				<td><%= Course.find(lesson.course_id).name %></td>
+				<% course = Course.find(lesson.course_id)%>
+				<td><%= link_to course.name, course_path(course) %></td>
+				<td><%= link_to Teacher.find(course.teacher_id).name, teacher_path(course.teacher_id)%></td>
 				
 				<% if signed_in? %>
 					<td><%= link_to "Edit", edit_lesson_path(lesson)%></td>

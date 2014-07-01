@@ -1,0 +1,13 @@
+<div class="span3 sidebar">
+	<img src="http://www.regis.org/images/Admissions/Nav_Pic_57.jpg" />
+	<div class="well">
+
+		<ul class="nav nav-list">
+			<li class="nav-header">Our Class</li>
+			<li class=<%= 'active' if params[:action] == 'show'%>><%= link_to "Description", class_path(@cla)%></li>
+			<li class=<%= 'active' if params[:action] == 'photos'%>><%= link_to "Photos", photos_path(@cla)%></li>
+
+		</ul>
+
+	</div>
+</div>

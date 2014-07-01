@@ -42,10 +42,13 @@
 		<% if params[:action] == 'index'%>
 			<li>Classes</li>
 
-		<% elsif params[:action] == 'show'%>
+		<% elsif params[:action] == 'show' || params[:action] == 'photos'%>
 			<li><%= link_to 'Classes', classes_path%></li>
 			<li><%= full_class_name(@cla) %></li>
 		<% end %>
+
+	<% elsif params[:controller] == 'pages'	%>
+			<li class="active">Admission</li>
 	<% end %>
 
 </ol>

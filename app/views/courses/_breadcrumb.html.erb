@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+	  <li><%= link_to "Home", root_path%></li>
+
+	  <% if get_prev_path == 'courses'%>
+	  	<li><%= link_to "Courses by Department", courses_path %></li>
+	  <% else %>
+	  	<li><%= link_to "Courses by Grade",  courses_by_grade_path%></li>
+	  <% end %>
+
+	  <% if params[:action] == 'show' %>
+	  	<li class="active"><%= @course.name%></li>	
+	  <% end %>
+</ol>
