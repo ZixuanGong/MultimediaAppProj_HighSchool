@@ -6,18 +6,13 @@ body {
   background: url('/assets/light_noise_diagonal.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
-
 .sidebar {
   margin-top: 20px;
   position: static;
 
-  img{
-    margin-bottom: 15px;
-  }
+  img{ margin-bottom: 15px; }
 
-  ul{
-    padding-left: 15px;
-  }
+  ul{ padding-left: 15px; }
 }
 
 #wrapper{
@@ -26,19 +21,10 @@ body {
   padding-bottom: 10px;
 }
 
-.content{
-  padding-left: 10px;
-}
-
-.inline {
-  display: inline;
-  margin-right: 20px;
-}
 /* homepage */
 .jumbotron {
   background-attachment: fixed;
   background-image: url('/assets/jumbotron.jpeg');
-
   background-position: center;
   background-size: cover;
   height: 430px;
@@ -46,14 +32,9 @@ body {
   width: 100%;
 }
 
-#home-pic {
-  margin-bottom: 0;
-}
-
 #home-container{
   padding-left: 30px;
   padding-right: 30px;
-
   background: url('/assets/lightpaperfibers.png') repeat scroll 0 0 rgba(0, 0, 0, 0);
 
   h1{
@@ -79,11 +60,16 @@ body {
 
 
 .content{
-  margin: 0,50px,0,50px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   ul > li{
     font-size: 1.2em;
     margin-bottom: 10px;
+  }
+
+  h2{
+    font-style: italic;
   }
 
 }
@@ -132,21 +118,12 @@ h1, h2, h3, h4, h5, h6{
   line-height: 1;
 }
 
-h1 {
-  margin-bottom: 30px !important;
-  border-bottom: 1px, solid, $grayLight !important;
-}
-
-h2 {
-  font-size: 1.5em;
-}
+h1 {  margin-bottom: 30px !important;}
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-
 
 /* form */
 input, textarea{
