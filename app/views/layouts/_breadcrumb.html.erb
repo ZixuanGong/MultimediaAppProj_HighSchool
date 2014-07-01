@@ -20,15 +20,15 @@
 			<li><%= link_to "Departments", '/teachers_depts' %></li>
 			<li class="active"><%= format4display(@department)%></li>
 		<% end %>
-	<% end %>
+	
 
-	<% if params[:controller] == 'courses' %>
+	<% elsif params[:controller] == 'courses' %>
 
 		<% if params[:action] == 'index' || params[:action] == 'by_grade' %>
 			<li>Courses</li>
 		<% end %>
 
-		<% if params[:action] == 'show' %>
+		<% if params[:action] == 'show' || params[:action] == 'timetable'%>
 			<% if get_prev_path == 'courses'%>
 				<li><%= link_to "Courses by Department", courses_path %></li>
 			<% else %>
@@ -36,6 +36,15 @@
 			<% end %>
 
 			<li class="active"><%= @course.name%></li>	
+		<% end %>
+
+	<% elsif params[:controller] == 'clas' %>
+		<% if params[:action] == 'index'%>
+			<li>Classes</li>
+
+		<% elsif params[:action] == 'show'%>
+			<li><%= link_to 'Classes', classes_path%></li>
+			<li><%= full_class_name(@cla) %></li>
 		<% end %>
 	<% end %>
 
