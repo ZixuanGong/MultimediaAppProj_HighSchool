@@ -1,6 +1,5 @@
 class LessonsController < ApplicationController
   def new
-  	@class = Cla.find(params[:cla_id])
   	@lesson = Lesson.new
   end
 

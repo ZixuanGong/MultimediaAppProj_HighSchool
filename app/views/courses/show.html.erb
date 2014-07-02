@@ -17,6 +17,6 @@
 	<p>Teacher: <%= link_to Teacher.find(@course.teacher_id).name, teacher_path(@course.teacher_id)%></p>
 
 	<% if signed_in? %>
-		<%= button_to('Edit', edit_course_path(@course), :class => 'btn btn-sm btn-primary')  %>
+		<%= button_to('Edit', edit_course_path(@course), :class => 'btn btn-sm btn-primary', :method => 'get')  %>
 	<% end %>
 </div>

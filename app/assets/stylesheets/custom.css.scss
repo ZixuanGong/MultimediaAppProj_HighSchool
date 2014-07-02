@@ -27,6 +27,7 @@ body {
   background-image: url('/assets/jumbotron.jpeg');
   background-position: center;
   background-size: cover;
+  margin-bottom: 0 !important;
   height: 430px;
   position: relative;
   width: 100%;
@@ -57,42 +58,30 @@ body {
 
 }
 
-
-
 .content{
   padding-left: 20px;
   padding-right: 20px;
 
-  ul > li{
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-
-  h2{
-    font-style: italic;
-  }
-
+  h2{  font-style: italic; }
 }
 
 /* header */
 #logo {
   float: left;
   margin-right: 10px;
+  font-family: Georgia;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  padding-left: 9px; 
+  color: #87CEEB;
+  padding: 2px 4px;
+  margin: 5px 0 5px 10px;
+  border: 3px solid white;
+  border-radius: 10px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-	  color: #fff;
 	  text-decoration: none;
   }
 }
-
-
 
 #nav {
   background: none repeat scroll 0 0 #373737;
@@ -105,44 +94,38 @@ body {
       margin: 5px;
       border-radius: 5px;
     }
-    
     a:link, a:visited {color: white;}
-
     a:hover {background-color: #808080;}
   }
 }
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6{
-  line-height: 1;
-}
-
 h1 {  margin-bottom: 30px !important;}
 
-p {
+p, li{
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
 /* form */
-input, textarea{
+form{ margin-bottom: 0 }
+
+input, textarea, select{
+  display: block;
+  margin-bottom: 15px !important;
   width: 100%;
-  display: block;
-  margin-bottom: 15px;
   height: auto !important;
-
 }
 
-select{
-  display: block;
-  margin-bottom: 15px;
-}
+/* breadcrumbs & sidebar*/
+.breadcrumb { margin-top: 20px; }
 
-
-/* breadcrumbs*/
-.breadcrumb {
-  margin-top: 20px;
+.nav-list {
+  li { 
+    margin: 5px 0 5px 0;
+    line-height: 1.5em;
+  }
 }
 
 /* footer */
@@ -174,11 +157,4 @@ footer {
   box-sizing: border-box;*/
 }
 
-#class_desc {
-  margin-top: 50px;
-}
-
-#courses_related {
-  margin-top: 20px;
-}
 

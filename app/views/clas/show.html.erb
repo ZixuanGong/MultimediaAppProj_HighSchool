@@ -38,8 +38,8 @@
 	</table>
 
 	<% if signed_in? %>
-			<%= link_to "New Lesson", new_lesson_path(cla_id: @cla.id)%>
-		<% end %>
+		<%= button_to('New Lesson', new_lesson_path(cla_id: @cla.id), :class => 'btn btn-large btn-primary', :method => 'get')  %>
+	<% end %>
 
 
 </div>

@@ -24,7 +24,7 @@
 	<% end %>
 
 	<% if signed_in? %>
-		<%= button_to('New Course', new_course_path, :class => 'btn btn-large btn-primary')  %>
+		<%= button_to('New Course', new_course_path, :class => 'btn btn-large btn-primary', :method => 'get')  %>
 	<% end %>
 </div>
 

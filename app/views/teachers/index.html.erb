@@ -19,6 +19,6 @@
 
 	<br>
 	<% if signed_in? %>
-		<%= link_to "New Teacher", new_teacher_path%>
+		<%= button_to('New Teacher', new_teacher_path, :class => 'btn btn-large btn-primary' ,:method => :get )%>
 	<% end %>
 </div>

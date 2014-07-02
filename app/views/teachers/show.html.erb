@@ -8,18 +8,15 @@
 
 	<h1><%= @teacher.name%></h1>
 	  
-	  
-		<p>Department: <%= @teacher.department%></p>
-		<p>Office: <%= @teacher.office%></p>
-		<p>Telephone: <%= @teacher.telephone%></p>
-		<p>Email: <%= @teacher.email%></p>
-		
-	<button type="button" class="btn btn-default" id="courses_related">
-		<%= link_to "Courses related", courses_related_path(@teacher)%></li>
-	</button>	
+	<p>Department: <%= @teacher.department%></p>
+	<p>Office: <%= @teacher.office%></p>
+	<p>Telephone: <%= @teacher.telephone%></p>
+	<p>Email: <%= @teacher.email%></p>
 
-		<% if signed_in? %>
-			<%= link_to "Edit", edit_teacher_path(@teacher) %>
-		<% end %>
+	<%= button_to('Courses related', courses_related_path(@teacher), :class => 'btn btn-large btn-primary' ,:method => :get )%>
+
+	<% if signed_in? %>
+		<%= button_to('Edit', edit_teacher_path(@teacher), :class => 'btn btn-large btn-primary' ,:method => :get )%>
+	<% end %>
 	  
 </div>
