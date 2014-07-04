@@ -1,3 +1,5 @@
+<% set_prev_page(request.referrer) %>
+
 <%= render 'structural_links'%>
 
 <div class="span9 content">
@@ -37,10 +39,15 @@
 		<% end %>
 	</table>
 
-	<% if signed_in? %>
-		<%= button_to('New Lesson', new_lesson_path(cla_id: @cla.id), :class => 'btn btn-large btn-primary', :method => 'get')  %>
-	<% end %>
+	<br>
 
+	<% if get_prev_path(3) == 'courses' %>
+		<% course = Course.find( get_prev_path(2) ) %>
+		<%= link_to "<< Back to #{course.name}", :back%>
+	<% elsif get_prev_path(3) == 'teachers' %>
+		<% teacher = Teacher.find( get_prev_path(2) ) %>
+		<%= link_to "<< Back to #{teacher.name}", :back%>
+	<% end %>
 
 </div>
 

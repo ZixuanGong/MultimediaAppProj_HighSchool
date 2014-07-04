@@ -16,11 +16,15 @@
 			<div class="panel-body">
 				<ul>
 				<% classes_of_grade.each do |c| %>
-				<li><%= link_to full_class_name(c), class_path(c)%></li>
+				<li><%= link_to full_class_name(c), cla_path(c)%></li>
 				<% end %>
 				</ul>
 			</div>
 
 		</div>
+	<% end %>
+
+	<% if signed_in? %>
+		<%= button_to('New Lesson', new_lesson_path, :class => 'btn btn-large btn-primary', :method => 'get')  %>
 	<% end %>
 </div>

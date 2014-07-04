@@ -6,17 +6,30 @@
 
 	<%= render 'layouts/breadcrumb'%>
   
-    <h1>Course Name: <%= @course.name%></h3>
-  
-	<p>Program: <%= @course.program%></p>
+    <h1><%= @course.name%></h1>
+  	
+  	<% teacher = Teacher.find(@course.teacher_id) %>
 
-	<p>Department: <%= @course.department%></p>
+	<p><b>Teacher:</b> <%= link_to teacher.name, teacher_path(teacher)%></p>
 
-	<p>Grade: Senior <%= @course.grade%></p>
+	<p><b>Department:</b> <%= @course.department%></p>
 
-	<p>Teacher: <%= link_to Teacher.find(@course.teacher_id).name, teacher_path(@course.teacher_id)%></p>
+	<p><b>Grade:</b> Senior <%= @course.grade%></p>
+
+	<p><b>Program:</b> <%= @course.program%></p>
 
 	<% if signed_in? %>
 		<%= button_to('Edit', edit_course_path(@course), :class => 'btn btn-sm btn-primary', :method => 'get')  %>
 	<% end %>
+
+	<br>
+	<% if get_prev_path(1) == 'courses_related' %>
+		<%= link_to "<< Back to #{teacher.name}'s Related Courses", :back%>
+
+	<% elsif get_prev_path(2) == 'clas' %>
+		<% cla = Cla.find( get_prev_path(1) )%>
+		<% cla_name = full_class_name(cla.id)%>
+		<%= link_to "<< Back to #{cla_name}", :back%>
+	<% end %>
+	
 </div>

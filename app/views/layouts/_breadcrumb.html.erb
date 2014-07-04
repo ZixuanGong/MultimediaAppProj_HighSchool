@@ -7,7 +7,7 @@
 
 		<% elsif params[:action] == 'show' || params[:action] == 'timetable' %>
 
-			<% if get_prev_path == 'teachers'%>
+			<% if get_prev_path(1) == 'teachers'%>
 				<li><%= link_to "All Teachers", teachers_path %></li>
 			<% else %>
 				<li><%= link_to "Departments",  departments_path%></li>
@@ -29,7 +29,7 @@
 		<% end %>
 
 		<% if params[:action] == 'show' || params[:action] == 'timetable'%>
-			<% if get_prev_path == 'courses'%>
+			<% if get_prev_path(1) == 'courses'%>
 				<li><%= link_to "Courses by Department", courses_path %></li>
 			<% else %>
 				<li><%= link_to "Courses by Grade",  courses_by_grade_path%></li>
@@ -43,7 +43,7 @@
 			<li>Classes</li>
 
 		<% elsif params[:action] == 'show' || params[:action] == 'photos'%>
-			<li><%= link_to 'Classes', classes_path%></li>
+			<li><%= link_to 'Classes', clas_path%></li>
 			<li><%= full_class_name(@cla) %></li>
 		<% end %>
 

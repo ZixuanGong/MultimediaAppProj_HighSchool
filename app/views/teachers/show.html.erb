@@ -7,7 +7,7 @@
 	<%= render 'layouts/breadcrumb'%>
 
 	<h1><%= @teacher.name%></h1>
-	  
+
 	<p>Department: <%= @teacher.department%></p>
 	<p>Office: <%= @teacher.office%></p>
 	<p>Telephone: <%= @teacher.telephone%></p>
@@ -18,5 +18,17 @@
 	<% if signed_in? %>
 		<%= button_to('Edit', edit_teacher_path(@teacher), :class => 'btn btn-large btn-primary' ,:method => :get )%>
 	<% end %>
+
+	<br>
+	<% if get_prev_path(2) == 'courses' %>
+		<% course = Course.find( get_prev_path(1) ) %>
+		<%= link_to "<< Back to #{course.name}", :back%>
+	<% elsif get_prev_path(2) == 'clas' %>
+		<% cla = Cla.find( get_prev_path(1) ) %>
+		<% cla_name = full_class_name(cla.id)%>
+		<%= link_to "<< Back to #{cla_name}", :back%>
+	<% end %>
+
+	
 	  
 </div>

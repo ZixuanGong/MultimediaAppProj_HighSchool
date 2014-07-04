@@ -16,7 +16,7 @@
 				<tr>
 					<td><%= course.name%></td>
 					<td><%= lesson.time_slot%></td>
-					<td><%= link_to full_class_name(Cla.find(lesson.cla_id)), class_path(Cla.find(lesson.cla_id))%></td>
+					<td><%= link_to full_class_name(Cla.find(lesson.cla_id)), cla_path(Cla.find(lesson.cla_id))%></td>
 				</tr>
 			<% end %>
 		<% end %>

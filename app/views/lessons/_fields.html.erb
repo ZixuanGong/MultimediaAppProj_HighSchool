@@ -1,5 +1,12 @@
-<%= f.label "Class"%>
-<%= f.collection_select :cla_id, Cla.all, :id, :full_name, prompt: true%>
+<div>
+	<%= f.label :grade%>
+	<%= f.select :grade, Cla::GRADES, prompt: true%>
+
+	<%= f.label "Class"%>
+	<%= f.collection_select :cla_id, Cla.all, :id, :full_name, prompt: true%>
+
+</div>
+
 
 <%= f.label :weekday%>
 <%= f.select :weekday, Lesson::WEEKDAYS, prompt: true%>

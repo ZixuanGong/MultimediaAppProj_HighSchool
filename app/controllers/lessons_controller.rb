@@ -20,14 +20,12 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to class_path(Cla.find(params[:lesson][:cla_id]))
+      redirect_to cla_path(Cla.find(params[:lesson][:cla_id]))
       flash[:success] = "Lesson updated!"
     else
       render 'edit'
     end
   end
-
-
 
   private
 

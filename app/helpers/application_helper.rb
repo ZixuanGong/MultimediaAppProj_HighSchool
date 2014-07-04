@@ -16,8 +16,8 @@ module ApplicationHelper
 		"Senior #{c.grade}-#{c.name}"
 	end
 
-	def get_prev_path
-		self.prev_page.split('/')[-1]
+	def get_prev_path(n)
+		self.prev_page.split('/')[-n]
 	end
 
 	def set_prev_page(page)
